@@ -1,6 +1,6 @@
-package Ch_01_Arrays_and_Strings.IsUnique_01;
+package Algorithms.Ch_01_Arrays_and_Strings.IsUnique_01;
 
-public class Solution {
+class Solution1 {
     public static void main(String[] args) {
         String[] words = {"asd", "asdfa"};
         for (String word : words) {
