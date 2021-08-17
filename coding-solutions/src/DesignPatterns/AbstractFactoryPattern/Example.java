@@ -2,35 +2,32 @@ package DesignPatterns.AbstractFactoryPattern;
 
 public class Example {
 
-    public static class ExampleFactory implements FileFactory {
+    public static class FileFactory {
 
-        private ExampleFactory() {
-        }
+        private FileFactory() {}
 
-        @Override
         public TextFile createTextFile() {
             return new TextFile();
         }
 
-        @Override
         public VideoFile createVideoFile() {
             return new VideoFile();
         }
 
         //Lazy initialization of the factory class instance according to best practices
         private static class ExampleFactoryInstanceGenerator {
-            private static final ExampleFactory INSTANCE = new ExampleFactory();
+            private static final FileFactory INSTANCE = new FileFactory();
         }
 
-        public static ExampleFactory getInstance() {
+        public static FileFactory getInstance() {
             return ExampleFactoryInstanceGenerator.INSTANCE;
         }
 
     }
 
     public static void main(String[] args) {
-        TextFile doc = ExampleFactory.getInstance().createTextFile();
-        VideoFile video = ExampleFactory.getInstance().createVideoFile();
+        TextFile doc = FileFactory.getInstance().createTextFile();
+        VideoFile video = FileFactory.getInstance().createVideoFile();
 
         System.out.println(doc.toString());
         System.out.println(video.toString());
