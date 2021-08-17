@@ -3,8 +3,8 @@ package DesignPatterns.AbstractFactoryPattern;
 public class TextFile {
     private String name;
 
-    public TextFile() {
-        this.name = "I'm a text file!";
+    public TextFile(String name) {
+        this.name = name;
     }
 
     @Override

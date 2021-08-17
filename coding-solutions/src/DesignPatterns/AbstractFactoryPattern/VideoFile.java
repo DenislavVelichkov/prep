@@ -3,8 +3,8 @@ package DesignPatterns.AbstractFactoryPattern;
 public class VideoFile {
     private String name;
 
-    public VideoFile() {
-        this.name = "I'm a video file!";
+    public VideoFile(String name) {
+        this.name = name;
     }
 
     @Override

@@ -6,12 +6,12 @@ public class Example {
 
         private FileFactory() {}
 
-        public TextFile createTextFile() {
-            return new TextFile();
+        public TextFile createTextFile(String name) {
+            return new TextFile(name);
         }
 
-        public VideoFile createVideoFile() {
-            return new VideoFile();
+        public VideoFile createVideoFile(String name) {
+            return new VideoFile(name);
         }
 
         //Lazy initialization of the factory class instance according to best practices
@@ -26,8 +26,8 @@ public class Example {
     }
 
     public static void main(String[] args) {
-        TextFile doc = FileFactory.getInstance().createTextFile();
-        VideoFile video = FileFactory.getInstance().createVideoFile();
+        TextFile doc = FileFactory.getInstance().createTextFile("I'm a text file!");
+        VideoFile video = FileFactory.getInstance().createVideoFile("I'm a video file!");
 
         System.out.println(doc.toString());
         System.out.println(video.toString());
